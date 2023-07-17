@@ -1,6 +1,4 @@
-﻿using TECMESAPI.Domain.Enuns;
-
-namespace TECMESAPI.Application.DTO
+﻿namespace TECMESAPI.Application.DTO
 {
     public class DTOBase
     {

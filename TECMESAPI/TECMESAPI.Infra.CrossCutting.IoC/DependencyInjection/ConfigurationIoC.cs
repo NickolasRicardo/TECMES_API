@@ -33,6 +33,11 @@ namespace TECMESAPI.CrossCutting.IoC.DependencyInjection
         {
             services.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
             services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<IMaquinaService, MaquinaService>();
+            services.AddScoped<IOrdemProducaoService, OrdemProducaoService>();
+            services.AddScoped<IProducaoService, ProducaoService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IVendaService, VendaService>();
         }
 
         private static void RegisterApplication(IServiceCollection services)
@@ -43,6 +48,11 @@ namespace TECMESAPI.CrossCutting.IoC.DependencyInjection
             );
 
             services.AddScoped<IClienteApplicationService, ClienteApplicationService>();
+            services.AddScoped<IMaquinaApplicationService, MaquinaApplicationService>();
+            services.AddScoped<IOrdemProducaoApplicationService, OrdemProducaoApplicationService>();
+            services.AddScoped<IProducaoApplicationService, ProducaoApplicationService>();
+            services.AddScoped<IProdutoApplicationService, ProdutoApplicationService>();
+            services.AddScoped<IVendaApplicationService, VendaApplicationService>();
         }
 
         private static void RegisterRepositories(IServiceCollection services)
@@ -50,6 +60,11 @@ namespace TECMESAPI.CrossCutting.IoC.DependencyInjection
             services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
 
             services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IMaquinaRepository, MaquinaRepository>();
+            services.AddScoped<IOrdemProducaoRepository, OrdemProducaoRepository>();
+            services.AddScoped<IProducaoRepository, ProducaoRepository>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IVendaRepository, VendaRepository>();
         }
     }
 }
