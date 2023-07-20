@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TECMESAPI.API.Controllers;
 using TECMESAPI.Application.DTO;
 using TECMESAPI.Application.Interfaces.Services;
@@ -8,6 +9,7 @@ namespace TECMESAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ProdutoController : BaseController<ProdutoEntity, ProdutoDTO>
     {
         private readonly IProdutoApplicationService _service;

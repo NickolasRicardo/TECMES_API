@@ -8,11 +8,11 @@ namespace TECMESAPI.Application.Configuration
     {
         public static void AddFluentValidationConfiguration(this IServiceCollection services)
         {
-            //services.AddFluentValidation(x =>
-            //{
-            //    x.RegisterValidatorsFromAssembly(Assembly.GetAssembly(typeof(BenefDTOValidation)));
-            //    x.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
-            //});
+            // services.AddFluentValidation(x =>
+            // {
+            //     x.RegisterValidatorsFromAssembly(Assembly.GetAssembly(typeof(BenefDTOValidation)));
+            //     x.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
+            // });
         }
     }
 }
