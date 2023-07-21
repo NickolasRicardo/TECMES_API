@@ -37,6 +37,9 @@ namespace TECMESAPI.Infra.Data.Config
                 .WithMany(p => p.Producao)
                 .HasForeignKey(d => d.OrdemProducaoId)
                 .HasConstraintName("fk_Producao_OrdemProducao1");
+
+            builder.Navigation(e => e.Maquina).AutoInclude();
+            builder.Navigation(e => e.OrdemProducao).AutoInclude();
         }
     }
 }

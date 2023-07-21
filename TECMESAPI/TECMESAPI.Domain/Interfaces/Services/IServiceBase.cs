@@ -16,6 +16,7 @@ namespace TECMESAPI.Domain.Interfaces.Services
         Task<T> Find(params object[] keys);
         Task<PagedModel<T>> Get(Expression<Func<T, bool>> predicate, QueryParam param);
         Task<PagedModel<T>> GetAll(QueryParam param);
+        Task<List<T>> GetAll();
         Task<T> GetByCPF(string cpf);
     }
 }

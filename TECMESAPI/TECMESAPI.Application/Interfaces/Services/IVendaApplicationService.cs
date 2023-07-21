@@ -3,5 +3,7 @@ using TECMESAPI.Domain.Entities;
 
 namespace TECMESAPI.Application.Interfaces.Services
 {
-    public interface IVendaApplicationService : IApplicationServiceBase<VendaEntity, VendaDTO> { }
+    public interface IVendaApplicationService : IApplicationServiceBase<VendaEntity, VendaDTO> {
+        Task Autorizar(long id);
+    }
 }

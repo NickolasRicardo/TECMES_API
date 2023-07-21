@@ -12,6 +12,7 @@ namespace TECMESAPI.Application.Configuration
             {
                 x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 x.JsonSerializerOptions.IgnoreNullValues = true;
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
             });
         }
     }

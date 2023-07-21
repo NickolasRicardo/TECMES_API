@@ -1,8 +1,8 @@
-﻿using TECMESAPI.Application.DTO;
+﻿using Microsoft.AspNetCore.Mvc;
+using TECMESAPI.Application.DTO;
 using TECMESAPI.Application.Interfaces.Services;
 using TECMESAPI.CrossCutting.Conditions;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+using TECMESAPI.CrossCutting.Pagination;
 
 namespace TECMESAPI.API.Controllers
 {
@@ -18,8 +18,8 @@ namespace TECMESAPI.API.Controllers
         }
 
         // GET: api/<BaseController>
-        [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] QueryParam param)
+        [HttpGet("paginated")]
+        public async Task<ActionResult<PagedModel<TDto>>> Get([FromQuery] QueryParam param)
         {
             try
             {
@@ -34,9 +34,24 @@ namespace TECMESAPI.API.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<ActionResult<PagedModel<TDto>>> Get()
+        {
+            try
+            {
+                var obj = await _service.GetAll();
+
+                return Ok(obj);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = $"Ocorreu algum erro interno na aplicação: {ex.Message}" });
+            }
+        }
+
         // GET api/<BaseController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(long id)
+        public async Task<ActionResult<TDto>> Get(long id)
         {
             try
             {

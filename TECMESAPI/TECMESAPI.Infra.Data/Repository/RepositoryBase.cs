@@ -57,6 +57,10 @@ namespace TECMESAPI.Infra.Data.Repository
         {
             return await _dataSet.AsNoTracking().PaginateAsync(param);
         }
+        public async Task<List<T>> GetAll()
+        {
+            return await _dataSet.AsNoTracking().ToListAsync();
+        }
 
         public async Task<T> GetByFilter(Expression<Func<T, bool>> predicate)
         {

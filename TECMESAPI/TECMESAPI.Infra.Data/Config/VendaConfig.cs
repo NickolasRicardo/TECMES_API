@@ -45,6 +45,10 @@ namespace TECMESAPI.Infra.Data.Config
                 .WithMany(p => p.Venda)
                 .HasForeignKey(d => d.ProdutoId)
                 .HasConstraintName("fk_Venda_Produto1");
+
+            builder.Navigation(e => e.OrdemProducao).AutoInclude();
+            builder.Navigation(e => e.Produto).AutoInclude();
+            builder.Navigation(e => e.Cliente).AutoInclude();
         }
     }
 }

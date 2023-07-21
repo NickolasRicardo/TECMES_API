@@ -63,6 +63,15 @@ namespace TECMESAPI.Application.Services.Services
             return objDTO;
 
         }
+        public async Task<List<TDto>> GetAll()
+        {
+            var listObj = await _service.GetAll();
+
+            var objDTO = _mapper.Map<List<TDto>>(listObj);
+
+            return objDTO;
+
+        }
 
         public async Task<TDto> GetByFilter(Expression<Func<TEntity, bool>> predicate)
         {

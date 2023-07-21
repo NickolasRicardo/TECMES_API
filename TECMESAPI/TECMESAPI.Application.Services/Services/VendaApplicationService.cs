@@ -19,5 +19,10 @@ namespace TECMESAPI.Application.Services.Services
             _service = service;
             _mapper = mapper;
         }
+
+        public async Task Autorizar(long id)
+        {
+              await _service.Autorizar(id);
+        }
     }
 }

@@ -19,5 +19,23 @@ namespace TECMESAPI.Controllers
         {
             _service = service;
         }
+
+        // PUT api/<BaseController>/5
+        [HttpPut("autorizar/{id}")]
+        public async Task<IActionResult> PutAsync(long id)
+        {
+            try
+            {
+                await _service.Autorizar(id);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+
+
+            }
+        }
     }
 }

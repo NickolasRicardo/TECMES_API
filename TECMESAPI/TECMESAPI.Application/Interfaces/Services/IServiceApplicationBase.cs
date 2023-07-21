@@ -17,6 +17,7 @@ namespace TECMESAPI.Application.Interfaces.Services
         Task<TDto> Find(params object[] keys);
         Task<PagedModel<TDto>> Get(Expression<Func<TEntity, bool>> predicate, QueryParam param);
         Task<PagedModel<TDto>> GetAll(QueryParam param);
+        Task<List<TDto>> GetAll();
 
     }
 }

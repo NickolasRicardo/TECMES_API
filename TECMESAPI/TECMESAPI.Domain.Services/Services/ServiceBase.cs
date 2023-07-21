@@ -44,6 +44,10 @@ namespace TECMESAPI.Domain.Services.Services
         {
             return await _repository.GetAll(param);
         }
+        public async Task<List<T>> GetAll()
+        {
+            return await _repository.GetAll();
+        }
 
         public async Task<T> GetByFilter(Expression<Func<T, bool>> predicate)
         {

@@ -4,6 +4,6 @@
     {
         public string CodigoSerie { get; set; }
 
-        public virtual ICollection<ProducaoDTO> Producaos { get; set; } = new List<ProducaoDTO>();
+        public virtual ICollection<ProducaoDTO> Producoes { get; set; } = new List<ProducaoDTO>();
     }
 }
