@@ -40,7 +40,7 @@ namespace TECMESAPI.Controllers
                     issuer: _issuer,
                     audience: _audience,
                     claims: new List<Claim>(),
-                    expires: DateTime.Now.AddMinutes(2),
+                    expires: DateTime.Now.AddHours(2),
                     signingCredentials: signinCredentials);
 
                 var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
